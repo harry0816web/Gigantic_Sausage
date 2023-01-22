@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="A shop that sells GIGANTIC sausages">
+        <title>GiganticSausage</title>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <script src="js/shop.js" defer></script>
+        <script src="https://kit.fontawesome.com/cce369cee1.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header class="sticky-nav-bar">
+            <div class="logo">LOGO</div>
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="輸入想找的商品名稱">
+            </div>
+            <div class="functions">
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-solid fa-right-to-bracket"></i>    
+            </div>
+        </header>
+        <main>
+            <div class="ads">
+                廣告
+            </div>
+            <div class="filterSelect">
+                <select name="flavor" id="flavor">  
+                    <option value="pepper">胡椒</option>
+                    <option value="spicy">麻辣</option>
+                    <option value="original">原味</option>
+                </select>
+                <select name="size" id="size">
+                    <option value="cm_15">15cm</option>
+                    <option value="cm_10">10cm</option>
+                    <option value="cm_5">5cm</option>
+                </select>
+                <select name="filter" id="filter">
+                    <option value="none">無</option>
+                    <option value="price_lowToHigh">價格:低到高</option>
+                    <option value="price_highToLow">價格:高到低</option>
+                    <option value=""></option>
+                </select>
+            </div>
+            <div class="merches">
+                <!--做出有"看更多商品"的功能(可以自動添加更多的div及內容) -->
+                <div class="merchTable">
+                    <div class="column" id="column0"></div>
+                    <div class="column" id="column1"></div>
+                    <div class="column" id="column2"></div>
+                </div>
+           </div>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+html,body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: rgb(238, 207, 117);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.sticky-nav-bar{
+    position: sticky;
+    top:0px;
+    height:10vh;
+    width: 100%;
+    background-color: rgba(255,255,255,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    width: 15vw;
+    padding-left:1vw;
+    font-size:3vh;
+}
+.search{
+    font-size:3vh;
+    width: 20vw;
+    display:flex;
+    justify-content:center;
+}
+.search > input{
+    font-size:2vh;
+    border:none;
+    border-bottom: 0.1vh black solid;
+    outline:none;
+    background-color: transparent;
+
+}
+.functions{
+    width: 15vw;
+    font-size:3vh;
+    display: flex;
+    justify-content: space-evenly;
+}
