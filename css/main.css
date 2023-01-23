@@ -8,11 +8,19 @@ html,body{
     overflow:visible;
 }
 ::-webkit-scrollbar{
-    width:0.5vw;
+    width:0.6vw;
 }
 ::-webkit-scrollbar-thumb{
-    background-color: rgb(255, 183, 3);
+    background-color: rgb(127, 121, 240);
     border-radius: 50px;
+    height:5vh;
+}
+::-webkit-scrollbar-button{
+    background-color: gray;
+}
+::-webkit-scrollbar-track-piece{
+    background-color: gray;
+    
 }
 
 

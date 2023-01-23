@@ -9,6 +9,15 @@ let merchesInfo = [
     ['sweet',120],
     ['pepper',150],
     ['spicy',100],
+    ['sweet',120],
+    ['pepper',150],
+    ['spicy',100],
+    ['sweet',120],
+    ['pepper',150],
+    ['spicy',100],
+    ['sweet',120],
+    ['pepper',150],
+    ['spicy',100],
     ['sweet',120]
 ];
 let arrLength = parseInt(merchesInfo.length)/3;
