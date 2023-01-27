@@ -37,16 +37,31 @@ html,body{
     justify-content: space-between;
     align-items: center;
 }
+/* leftSide */
 .logo{
     width: 15vw;
     padding-left:1vw;
     font-size:3vh;
 }
+/* middle */
 .search{
     font-size:3vh;
     width: 20vw;
     display:flex;
     justify-content:center;
+}
+.unfold{
+    animation-duration: .8s;
+    animation-direction:alternate;
+    animation-name: unfold;
+}
+@keyframes unfold {
+    from{
+        transform: scaleX(0);
+    }
+    to{
+        transform: scaleX(1);
+    }
 }
 .search > input{
     font-size:2vh;
@@ -56,6 +71,7 @@ html,body{
     background-color: transparent;
 
 }
+/* rightside */
 .functions{
     width: 15vw;
     font-size:3vh;
@@ -65,41 +81,125 @@ html,body{
 
 
 /* main */
-.ads{
+/* picSlideShow */
+.slideShow{
     width:40vw;
-    height:30vh;
+    height:40vh;
     margin-top: 5vh;
-    margin-left: 30vw;
-    background-color: black;
-    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+    color: black;
     text-align: center;
-    font-size: 20vh;
-}
-.filterSelect{
-    width:100%;
+    font-size: 10vh;
     display:flex;
+    overflow-x: hidden;
+}
+.slidePic{
+    width:40vw; 
+    height:40vh;
+}
+.ctrlBtn{
+    top:28vh;
+    height:auto;
+    width:5vw;
+    background-color: transparent;
+    opacity: 0.1;
+    transition: opacity .5s linear;
+    z-index: 5;
+}
+.left{
+    position:absolute;
+    left:30%;
+}
+.right{
+    position: absolute;
+    right:30% !important;
+}
+.ctrlBtn:hover,.ctrlBtnRight:hover{
+    opacity: 1;
+    transition:opacity .5s linear;
+}
+@keyframes emerge{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity:1;
+    }
+}     
+
+/* filter */
+.filterSelect{
+    position: relative;
+    left:2vw;
+    height: 10vh;
+    width:30vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-left:auto;
+    margin-right: auto;
+    border-radius: 50px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:rgb(226, 223, 149);
+}
+.filterTitle{
+    position: relative;
+    left:-4vw;
+    width:5vw;
+    height:10vh;
+    background-color: rgb(243, 232, 106);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
 .filterSelect select{
-    margin:2vw;
-    border-radius:20vh;
+    position: relative;
+    left:-4vw;
+    height:5vh;
+    width:5vw;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background-color: rgb(235, 237, 199);
+    text-align: center;
 }
+/* merches */
 .merches{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 .merchTable{
-    width:60vw;
+    width:70vw;
     height:auto;
 }
 .column{
-    height:20vh;
+    height:40vh;
     display:flex;
     justify-content: space-around;
     justify-self: center;
+    margin-top:5vh;
 }
-.column div{
-    display: flex;
-    justify-content: start;
+.merch{
+    height:40vh;
+    width:20vw;
+    background-color: rgba(189, 234, 138,0.4);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.merch>ul{
+    list-style-type: none;
+    position: relative;
+    left:-3vw;
+}
+.merchPic{
+    height:30vh;
+    width: 15vw;
 }

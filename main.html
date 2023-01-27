@@ -14,7 +14,7 @@
             <div class="logo">LOGO</div>
             <div class="search">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" placeholder="輸入想找的商品名稱">
+                <input id="searchBar" type="text" placeholder="輸入想找的商品名稱" onclick="unfold()">
             </div>
             <div class="functions">
                 <i class="fa-regular fa-heart"></i>
@@ -23,10 +23,15 @@
             </div>
         </header>
         <main>
-            <div class="ads">
-                廣告
+            <div class="slideShow">
+                <div class="ctrlBtn left" onclick="slideToRight()"><i class="fa-solid fa-chevron-left"></i></div>
+                <div class="ctrlBtn right" onclick="slideToLeft()"><i class="fa-solid fa-chevron-right"></i></div>
+                <img src="/pictures/slide1.jpg" alt="picSlideShow" class="slidePic" style="transform:translateX(0);">
+                <img src="/pictures/slide2.jpg" alt="picSlideShow" class="slidePic" style="transform:translateX(0);">
+                <img src="/pictures/slide3.jpg" alt="picSlideShow" class="slidePic" style="transform:translateX(0);">
             </div>
             <div class="filterSelect">
+                <span class="filterTitle">篩選</span>
                 <select name="flavor" id="flavor">  
                     <option value="pepper">胡椒</option>
                     <option value="spicy">麻辣</option>
@@ -37,7 +42,7 @@
                     <option value="cm_10">10cm</option>
                     <option value="cm_5">5cm</option>
                 </select>
-                <select name="filter" id="filter">
+                <select name="filter" id="filter" style="width:7vw;">
                     <option value="none">無</option>
                     <option value="price_lowToHigh">價格:低到高</option>
                     <option value="price_highToLow">價格:高到低</option>
@@ -47,7 +52,7 @@
             <div class="merches">
                 <!--做出有"看更多商品"的功能(可以自動添加更多的div及內容) -->
                 <div class="merchTable">
-                    <div class="column" id="column0"></div>
+                    <div class="column" id="column0" style="margin-top:0;"></div>
                     <div class="column" id="column1"></div>
                     <div class="column" id="column2"></div>
                     <div class="column" id="column3"></div>
