@@ -1,49 +1,5 @@
-//animation
-//searchBar
-function unfold() {
-    let searchBar = document.getElementById('searchBar');
-    searchBar.className = 'unfold';
-    setTimeout(
-        ()=>{
-            searchBar.className = '';
-        }
-    ,1000);
-}
-//picureSlideShow
-function slideToLeft() {
-    let slidePics = document.getElementsByClassName('slidePic');
-    let translateValue = parseInt(slidePics[0].style.transform.match(/\d+/g)) * -1;
-    if(translateValue == -80){  //last one
-        translateValue = 40;
-    }
-    let animationStyleText = `
-        transform:translateX(${translateValue - 40}vw);
-        transition: transform 1s ease-in-out;
-    `;
-    for(let i = 0;i < 3;i ++){
-        slidePics[i].style.cssText += animationStyleText;
-    }
-}
-function slideToRight() {
-    let slidePics = document.getElementsByClassName('slidePic');
-    let translateValue = parseInt(slidePics[0].style.transform.match(/\d+/g)) * -1;
-    if(translateValue == 0){  //first one
-        translateValue = -120;
-    }
-    let animationStyleText = `
-        transform:translateX(${translateValue + 40}vw);
-        transition: transform 1s ease-in-out;
-    `;
-    for(let i = 0;i < 3;i ++){
-        slidePics[i].style.cssText += animationStyleText;
-    }
-}
-setInterval(() => {
-    slideToLeft(); 
-}, 7000);
-
-
 //建立商品圖
+// 迴圈跑div Id 一個一個填入資料=>innerHTML
 let data = {
     merches:[
         {
@@ -145,6 +101,14 @@ const vm = new Vue({
         }
     }
 })
+
+
+
+
+
+
+
+
 
 
 // 添加商品至收藏

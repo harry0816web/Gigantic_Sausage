@@ -4,11 +4,9 @@
         <meta charset="UTF-8">
         <meta name="description" content="A shop that sells GIGANTIC sausages">
         <title>GiganticSausage</title>
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="../css/main.css">
         <link rel="stylesheet" href="css/footer.css">
-        <script src="js/shop.js" defer></script>
-        <script src="https://kit.fontawesome.com/cce369cee1.js" crossorigin="anonymous"></script>
-    </head>
+        </head>
     <body>
         <header class="sticky-nav-bar">
             <div class="logo">LOGO</div>
@@ -17,9 +15,11 @@
                 <input id="searchBar" type="text" placeholder="輸入想找的商品名稱" onclick="unfold()">
             </div>
             <div class="functions">
-                <i class="fa-regular fa-heart"></i>
+                <label for="collectionToggler"><i class="fa-regular fa-heart" onclick="openCollection()"></i></label>
                 <i class="fa-solid fa-cart-shopping"></i>
-                <i class="fa-solid fa-right-to-bracket"></i>    
+                <i class="fa-solid fa-right-to-bracket"></i> 
+                <input id="collectionToggler" type="checkbox" style="display:none;">
+                <div id="collection" class="collection"></div>
             </div>
         </header>
         <main>
@@ -49,17 +49,37 @@
                     <option value=""></option>
                 </select>
             </div>
-            <div class="merches">
+            <div class="merches" id="app">
                 <!--做出有"看更多商品"的功能(可以自動添加更多的div及內容) -->
-                <div class="merchTable">
-                    <div class="column" id="column0" style="margin-top:0;"></div>
-                    <div class="column" id="column1"></div>
-                    <div class="column" id="column2"></div>
-                    <div class="column" id="column3"></div>
-                    <div class="column" id="column4"></div>
-                    <div class="column" id="column5"></div>
+                <div class="merchTable" id="merchTable">
+                    <div 
+                        class='merch'
+                        v-for="(item,index) in OnList"
+                    >
+                            <img :src='item.merchPicSrc' alt='sausagePic' class='merchPic' onclick='goToMerch("id${i}${j}")'>
+                            <ul>
+                                <li>
+                                    <div> {{item.merchName}} </div>
+                                    <div>價格: {{item.merchPrice}} </div>   
+                                </li>
+                                <li>
+                                    <div><button  id='heart${i}${j}' onclick='changeHeart("heart${i}${j}" );'><i class="fa-regular fa-heart"></i></button></div>
+                                    <div><i class="fa-solid fa-cart-shopping"></i></div>
+                                </li>
+                            </ul>
+                    </div>
+                    <button class="moreMerches" @click="moreMerches()">More</button>
                 </div>
            </div>
         </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+        <script src="test.js" defer></script>
+        <script src="https://kit.fontawesome.com/cce369cee1.js" crossorigin="anonymous"></script>
     </body>
 </html>
+
+
+
+
+
