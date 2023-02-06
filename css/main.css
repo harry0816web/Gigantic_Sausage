@@ -51,9 +51,10 @@ html,body{
     justify-content:center;
 }
 .unfold{
-    animation-duration: .8s;
+    animation-duration: .3s;
     animation-direction:alternate;
     animation-name: unfold;
+    transform-origin:top left;
 }
 @keyframes unfold {
     from{

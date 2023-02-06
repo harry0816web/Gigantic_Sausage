@@ -48,77 +48,77 @@ let data = {
         {
             merchPicSrc:'pictures/sausage6.png',
             merchName:'normal sausage',
-            merchPrice:'180',
+            merchPrice:180,
         },
         {
             merchPicSrc:'pictures/sausage1.png',
             merchName:'sweet sausage',
-            merchPrice:'150',
+            merchPrice:150,
         },
         {
             merchPicSrc:'pictures/sausage2.png',
             merchName:'spicy sausage',
-            merchPrice:'180',
+            merchPrice:180,
         },
         {
             merchPicSrc:'pictures/sausage3.png',
             merchName:'pepper sausage',
-            merchPrice:'180',
+            merchPrice:120,
         },
         {
             merchPicSrc:'pictures/sausage4.png',
             merchName:'garlic sausage',
-            merchPrice:'180',
+            merchPrice:130,
         },
         {
             merchPicSrc:'pictures/sausage5.png',
             merchName:'curry sausage',
-            merchPrice:'180',
+            merchPrice:200,
         },
         {
             merchPicSrc:'pictures/sausage6.png',
             merchName:'wine sausage',
-            merchPrice:'180',
+            merchPrice:150,
         },
         {
             merchPicSrc:'pictures/sausage1.png',
             merchName:'sweet sausage',
-            merchPrice:'150',
+            merchPrice:185,
         },
         {
             merchPicSrc:'pictures/sausage2.png',
             merchName:'spicy sausage',
-            merchPrice:'180',
+            merchPrice:185,
         },
         {
             merchPicSrc:'pictures/sausage3.png',
             merchName:'pepper sausage',
-            merchPrice:'180',
+            merchPrice:199,
         },
         {
             merchPicSrc:'pictures/sausage1.png',
             merchName:'sweet sausage',
-            merchPrice:'150',
+            merchPrice:100,
         },
         {
             merchPicSrc:'pictures/sausage2.png',
             merchName:'spicy sausage',
-            merchPrice:'180',
+            merchPrice:170,
         },
         {
             merchPicSrc:'pictures/sausage3.png',
             merchName:'pepper sausage',
-            merchPrice:'180',
+            merchPrice:145,
         },
         {
             merchPicSrc:'pictures/sausage4.png',
             merchName:'spicy sausage',
-            merchPrice:'180',
+            merchPrice:185,
         },
         {
             merchPicSrc:'pictures/sausage5.png',
             merchName:'spicy sausage',
-            merchPrice:'180',
+            merchPrice:180,
         }
     ],
     showRange:9,
@@ -145,25 +145,25 @@ const vm = new Vue({
                         }
                 })
                 if(this.filter.flavor == 'all')
-                    return inputSearchMerches
+                    return this.sortByPrice(inputSearchMerches)
                 else{
-                    return inputSearchMerches.filter(item => {
+                    return this.sortByPrice(inputSearchMerches.filter(item => {
                         if(item.merchName.indexOf(this.filter.flavor) != -1)
                             return item
-                    })
+                    }))
                 }
             }
             else if(this.filter.flavor != "all"){
-                    return this.merches.filter(item => {
+                    return this.sortByPrice(this.merches.filter(item => {
                         if(item.merchName.indexOf(this.filter.flavor) != -1)
                             return item
-                    })
+                    }))
             }
             else {      //default
                 for(let i = 0;i < this.showRange;i ++){
                     this.merchesOnList.push(this.merches[i])
                 }
-                return this.merchesOnList
+                return this.sortByPrice(this.merchesOnList)
             }
         }
     },
@@ -178,6 +178,21 @@ const vm = new Vue({
         //go to merch page
         goToMerch(index){
             location.href = `merch.html?index=${index}`;
+        },
+        sortByPrice(arr){
+            console.log('asdfaf');
+            if(this.filter.price == 'price_highToLow')
+            return arr.sort(function (first,second) {
+                return second.merchPrice - first.merchPrice
+            })
+            else if(this.filter.price == 'price_lowToHigh'){
+                return arr.sort(function (first,second) {
+                    return first.merchPrice - second.merchPrice
+                })
+            }
+            else {
+                return arr              //default
+            }
         }
     }
 })
