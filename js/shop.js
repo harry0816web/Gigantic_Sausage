@@ -47,7 +47,7 @@ setInterval(() => {
 let data = {
     merches:[
         {
-            merchPicSrc:'../pictures/sausage1.png',
+            merchPicSrc:'pictures/sausage1.png',
             merchName:'sweet sausage',
             merchPrice:'150',
         },
