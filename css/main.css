@@ -205,7 +205,7 @@ html,body{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    border-radius:10px;
+    border-radius:20px;
 }
 .merch{
     height:40vh;
