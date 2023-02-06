@@ -42,10 +42,14 @@ setInterval(() => {
     slideToLeft(); 
 }, 7000);
 
-
 //建立商品圖
 let data = {
     merches:[
+        {
+            merchPicSrc:'pictures/sausage6.png',
+            merchName:'normal sausage',
+            merchPrice:'180',
+        },
         {
             merchPicSrc:'pictures/sausage1.png',
             merchName:'sweet sausage',
@@ -58,7 +62,52 @@ let data = {
         },
         {
             merchPicSrc:'pictures/sausage3.png',
+            merchName:'pepper sausage',
+            merchPrice:'180',
+        },
+        {
+            merchPicSrc:'pictures/sausage4.png',
+            merchName:'garlic sausage',
+            merchPrice:'180',
+        },
+        {
+            merchPicSrc:'pictures/sausage5.png',
+            merchName:'curry sausage',
+            merchPrice:'180',
+        },
+        {
+            merchPicSrc:'pictures/sausage6.png',
+            merchName:'wine sausage',
+            merchPrice:'180',
+        },
+        {
+            merchPicSrc:'pictures/sausage1.png',
+            merchName:'sweet sausage',
+            merchPrice:'150',
+        },
+        {
+            merchPicSrc:'pictures/sausage2.png',
             merchName:'spicy sausage',
+            merchPrice:'180',
+        },
+        {
+            merchPicSrc:'pictures/sausage3.png',
+            merchName:'pepper sausage',
+            merchPrice:'180',
+        },
+        {
+            merchPicSrc:'pictures/sausage1.png',
+            merchName:'sweet sausage',
+            merchPrice:'150',
+        },
+        {
+            merchPicSrc:'pictures/sausage2.png',
+            merchName:'spicy sausage',
+            merchPrice:'180',
+        },
+        {
+            merchPicSrc:'pictures/sausage3.png',
+            merchName:'pepper sausage',
             merchPrice:'180',
         },
         {
@@ -68,80 +117,67 @@ let data = {
         },
         {
             merchPicSrc:'pictures/sausage5.png',
-            merchName:'spicy sausage',
-            merchPrice:'180',
-        },
-        {
-            merchPicSrc:'pictures/sausage6.png',
-            merchName:'spicy sausage',
-            merchPrice:'180',
-        },
-        {
-            merchPicSrc:'pictures/sausage4.png',
-            merchName:'spicy sausage',
-            merchPrice:'180',
-        },
-        {
-            merchPicSrc:'pictures/sausage5.png',
-            merchName:'spicy sausage',
-            merchPrice:'180',
-        },
-        {
-            merchPicSrc:'pictures/sausage6.png',
-            merchName:'spicy sausage',
-            merchPrice:'180',
-        },
-        {
-            merchPicSrc:'pictures/sausage4.png',
-            merchName:'spicy sausage',
-            merchPrice:'180',
-        },
-        {
-            merchPicSrc:'pictures/sausage5.png',
-            merchName:'spicy sausage',
-            merchPrice:'180',
-        },
-        {
-            merchPicSrc:'pictures/sausage6.png',
-            merchName:'spicy sausage',
-            merchPrice:'180',
-        },
-        {
-            merchPicSrc:'pictures/sausage4.png',
-            merchName:'spicy sausage',
-            merchPrice:'180',
-        },
-        {
-            merchPicSrc:'pictures/sausage5.png',
-            merchName:'spicy sausage',
-            merchPrice:'180',
-        },
-        {
-            merchPicSrc:'pictures/sausage6.png',
             merchName:'spicy sausage',
             merchPrice:'180',
         }
     ],
     showRange:9,
-    merchesOnList:[]
+    merchesOnList:[],
+    filter:{
+        flavor:'all',
+        size:'15cm',
+        price:'none'
+    },
+    placeHolder:"輸入想搜尋的商品",
+    inputSearch:''
 }
 const vm = new Vue({
     el: '#app',
     data: data,
     computed:{
+        //filter
         OnList(){
-            for(let i = 0;i < this.showRange;i ++){
-                this.merchesOnList.push(this.merches[i])
+            if(this.inputSearch != ""){
+                let inputSearchMerches = this.merches.filter(item => {
+                    let inputText = this.inputSearch.toLowerCase()
+                        if(item.merchName.indexOf(inputText) != -1){
+                            return item
+                        }
+                })
+                if(this.filter.flavor == 'all')
+                    return inputSearchMerches
+                else{
+                    return inputSearchMerches.filter(item => {
+                        if(item.merchName.indexOf(this.filter.flavor) != -1)
+                            return item
+                    })
+                }
             }
-            return this.merchesOnList
+            else if(this.filter.flavor != "all"){
+                    return this.merches.filter(item => {
+                        if(item.merchName.indexOf(this.filter.flavor) != -1)
+                            return item
+                    })
+            }
+            else {      //default
+                for(let i = 0;i < this.showRange;i ++){
+                    this.merchesOnList.push(this.merches[i])
+                }
+                return this.merchesOnList
+            }
         }
     },
     methods:{
+        //show more merches
         moreMerches() {
             if(this.merches.length - this.showRange < 9){
                 this.showRange = this.merches.length
             }
             else this.showRange += 9
+        },
+        //go to merch page
+        goToMerch(index){
+            location.href = `merch.html?index=${index}`;
         }
     }
 })
@@ -186,10 +222,6 @@ function openCollection() {
     }
 }
 
-//跳轉至商品頁
-function goToMerch(id) {
-    location.href = 'merch.html?merchId=01';
-}
                
 
 
