@@ -93,9 +93,14 @@ html,body{
     transform: scaleY(0);
     transform-origin: top;
     transition: transform .3s ease-in-out, opacity .3s ease-in-out;
-    /* internal */
-    
+
 }
+    /* internal */
+.merchTr img{
+    max-width: 25px;
+    min-height: 25px;
+}
+
 #collectionToggler:checked ~ .collection{
     transform: scaleY(1);
     opacity: 1;

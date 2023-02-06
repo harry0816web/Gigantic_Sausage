@@ -17,11 +17,27 @@
                     :placeholder="placeHolder" v-model="inputSearch">
                 </div>
                 <div class="functions">
-                    <label for="collectionToggler"><i class="fa-regular fa-heart" onclick="openCollection()"></i></label>
+                    <label for="collectionToggler"><i class="fa-regular fa-heart"></i></label>
                     <i class="fa-solid fa-cart-shopping"></i>
                     <i class="fa-solid fa-right-to-bracket"></i> 
                     <input id="collectionToggler" type="checkbox" style="display:none;">
-                    <div id="collection" class="collection"></div>
+                    <div class="collection">
+                            <table>
+                                <tr>
+                                    <td></td>
+                                    <td>品名</td>
+                                    <td>價格</td>
+                                </tr>
+                                <tr
+                                    class="merchTr"
+                                    v-for="(item,index) in collection"
+                                >
+                                    <td> <img :src="item.merchPicSrc" alt="merchPic"> </td>
+                                    <td> {{item.merchName}} </td>
+                                    <td> {{item.merchPrice}} </td>
+                                </tr>
+                            </table>
+                    </div>
                 </div>
             </header>
             <main>
@@ -69,7 +85,10 @@
                                         <div>價格: {{item.merchPrice}} </div>   
                                     </li>
                                     <li>
-                                        <div><button  id='heart${i}${j}' onclick='changeHeart("heart${i}${j}" );'><i class="fa-regular fa-heart"></i></button></div>
+                                        <div><button @click="changeLike(index)">
+                                            <i class="fa-regular fa-heart" v-show="!item.like"></i>
+                                            <i class="fa-solid fa-heart" v-show="item.like"></i>
+                                        </button></div>
                                         <div><i class="fa-solid fa-cart-shopping"></i></div>
                                     </li>
                                 </ul>
