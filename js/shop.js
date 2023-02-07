@@ -128,27 +128,6 @@ let data = {
             merchName:'spicy sausage',
             merchPrice:170,
             like:false,
-        },
-        {
-            id:13,
-            merchPicSrc:'pictures/sausage3.png',
-            merchName:'pepper sausage',
-            merchPrice:145,
-            like:false,
-        },
-        {
-            id:14,
-            merchPicSrc:'pictures/sausage4.png',
-            merchName:'spicy sausage',
-            merchPrice:185,
-            like:false,
-        },
-        {
-            id:15,
-            merchPicSrc:'pictures/sausage5.png',
-            merchName:'spicy sausage',
-            merchPrice:180,
-            like:false,
         }
     ],
     showRange:9,
@@ -166,25 +145,26 @@ const vm = new Vue({
     data: data,
     computed:{
         //filter
-        OnList(){
+        onList(){
+            this.merchesOnList = [];
             if(this.inputSearch != ""){
-                let merchesOnList = this.merches.filter(item => {
+                    this.merchesOnList = this.merches.filter(item => {
                     let inputText = this.inputSearch.toLowerCase()
                         if(item.merchName.indexOf(inputText) != -1){
                             return item
                         }
                 })
                 if(this.filter.flavor == 'all')
-                    return this.sortByPrice(merchesOnList)
+                    return this.sortByPrice(this.merchesOnList)
                 else{
-                    return this.sortByPrice(merchesOnList.filter(item => {
+                    return this.sortByPrice(this.merchesOnList.filter(item => {
                         if(item.merchName.indexOf(this.filter.flavor) != -1)
                             return item
                     }))
                 }
             }
             else if(this.filter.flavor != "all"){
-                    return merchesOnList = this.sortByPrice(this.merches.filter(item => {
+                    return this.merchesOnList = this.sortByPrice(this.merches.filter(item => {
                         if(item.merchName.indexOf(this.filter.flavor) != -1)
                             return item
                     }))
@@ -193,7 +173,8 @@ const vm = new Vue({
                 for(let i = 0;i < this.showRange;i ++){
                     this.merchesOnList.push(this.merches[i])
                 }
-                return merchesOnList = this.sortByPrice(this.merchesOnList)
+                console.log(this.merchesOnList);
+                return this.merchesOnList = this.sortByPrice(this.merchesOnList)
             }
         },
         //be chosen and like == false => add in collection
@@ -231,20 +212,27 @@ const vm = new Vue({
             }
         },
         changeLike(index){
-            let boolean = (merchesOnList[index].like ? false : true) 
+            let boolean = (this.merchesOnList[index].like ? false : true) 
             // if(merchesOnList[index].like == false){
             //     merchesOnList[index].like = true
             // }
-            merchesOnList[index].like = boolean
+            this.merchesOnList[index].like = boolean
             //需優化
             let legnth = this.merches.length
             for(let i = 0;i < length;i ++){
-                if(this.merches[i].id == merchesOnList[index].id){
+                if(this.merches[i].id == this.merchesOnList[index].id){
                     this.merches[i].like = boolean
                     break
                 }
             }
-
+            this.check();
+        },
+        check(){
+            for(let i = 0;i < this.merchesOnList.length;i ++){
+                if(this.merchesOnList[i].like == true){
+                    console.log(this.merchesOnList[i].id);
+                }
+            }
         }
     }
 })
