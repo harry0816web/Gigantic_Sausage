@@ -81,8 +81,8 @@
                             </li>
                             <li>
                                 <div><button @click="changeLike(index)">
-                                        <i class="fa-regular fa-heart" v-show="!item.like"></i>
-                                        <i class="fa-solid fa-heart" v-show="item.like"></i>
+                                        <i class="fa-regular fa-heart" v-if="!item.like"></i>
+                                        <i class="fa-solid fa-heart" v-else></i>
                                     </button></div>
                                 <div><i class="fa-solid fa-cart-shopping"></i></div>
                             </li>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A shop that sells GIGANTIC sausages">
+    <title>GiganticSausage</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+    <div id="app">
+        <header class="sticky-nav-bar">
+            <div class="logo">LOGO</div>
+        </header>
+        <main>
+            <form action="" class="form">
+                帳號 <input type="text" v-model="input.userName" placeholder="請輸入帳號">
+                密碼 <input type="text" v-model="input.password" placeholder="請輸入密碼">
+                Email <input type="email" v-model="input.email" placeholder="請輸入電子郵件">
+                <input type="submit" @click="pushUser()">
+            </form>
+        </main>
+    </div>
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.2/axios.js'
+        integrity='sha512-9JZfp0g+DImom5Z/xNmIXW55czwHWQjf9Wyyw209+k3vjBLF+yb54Rsk5mMwE9HTpUhxYTocgniAlgf94qi1Tg=='
+        crossorigin='anonymous'></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script src="js/register.js" defer></script>
+    <script src="https://kit.fontawesome.com/cce369cee1.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

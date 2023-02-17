@@ -5,14 +5,14 @@
       "merchPicSrc": "pictures/sausage6.png",
       "merchName": "normal sausage",
       "merchPrice": 180,
-      "like": false
+      "like": true
     },
     {
       "id": 2,
       "merchPicSrc": "pictures/sausage1.png",
       "merchName": "sweet sausage",
       "merchPrice": 150,
-      "like": false
+      "like": true
     },
     {
       "id": 3,
@@ -87,35 +87,11 @@
   ],
   "members": [
     {
-      "id": 1,
       "userName": "harry0816",
-      "password": 1234,
+      "password": "1234",
       "email": "harry940816@gmail.com",
-      "like": [
-        1,
-        1,
-        4
-      ],
-      "shoppingCart": [
-        2,
-        3,
-        4,
-        6
-      ]
-    },
-    {
-      "userName": "asdf",
-      "password": "asdf",
-      "email": "asdf@gmail.com",
-      "like": [
-        1,
-        2,
-        3,
-        5,
-        4
-      ],
-      "shoppingCart": [],
-      "id": 2
+      "like": [],
+      "shoppingCart": []
     }
   ]
 }
