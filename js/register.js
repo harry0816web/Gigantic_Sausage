@@ -19,6 +19,8 @@ const vm = new Vue({
             })
                 .then((res) => {
                     console.log(res.data);
+                    alert("asf")
+                    location.href = "login.html"
                 })
                 .catch((err) => {
                     alert(err)

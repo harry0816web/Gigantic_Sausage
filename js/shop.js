@@ -111,22 +111,16 @@ const vm = new Vue({
     computed: {
         //filter
         onList() {
+            if (this.filter.price != "none" && this.filter.flavor == "all" && this.inputSearch == '') {
+                return this.sortByPrice(this.merchesOnList)
+            }
             if (this.inputSearch != "") {
-                // return this.merches.filter(item => {
-                //     let inputText = this.inputSearch.toLowerCase()
-                //     if (item.merchName.indexOf(inputText) != -1) {
-                //         return item
-                //     }
-                // })
-                if (this.filter.flavor.trim() == 'all') {
-                    return this.sortByPrice(this.merchesOnList)
-                }
-                else {
-                    return this.sortByPrice(this.merchesOnList.filter(item => {
-                        if (item.merchName.indexOf(this.filter.flavor) != -1)
-                            return item
-                    }))
-                }
+                return this.sortByPrice(this.merches.filter(item => {
+                    let inputText = this.inputSearch.toLowerCase()
+                    if (item.merchName.indexOf(inputText) != -1) {
+                        return item
+                    }
+                }))
             }
             else if (this.filter.flavor != "all") {
                 return this.sortByPrice(this.merches.filter(item => {
@@ -166,7 +160,7 @@ const vm = new Vue({
         },
         //go to merch page
         goToMerch(index) {
-            location.href = `merch.html?index=${index}`;
+            location.href = `merch.html?index=${index}like=${this.merchesOnList[index].like}userId=${this.userData.id}`;
         },
         sortByPrice(arr) {
             if (this.filter.price == 'price_highToLow')
@@ -225,19 +219,22 @@ const vm = new Vue({
         },
         getUserData() {
             if (this.getCookie("id") == "") {
-                console.log(1234);
                 location.href = "login.html"
             }
             this.userData.id = this.getCookie("id")
             this.userData.userName = this.getCookie("userName")
             this.userData.like = this.getCookie("like")
             this.userData.shoppingCart = this.getCookie("shoppingCart")
-            console.log(this.userData);
-            for (let i = 0; i < this.userData.like.length; i++) {
-                this.merches[this.userData.like[i]].like = true
+            //注意空值
+            if (!isNaN(this.userData.like[0])) {
+                for (let i = 0; i < this.userData.like.length; i++) {
+                    this.merches[this.userData.like[i]].like = true
+                }
             }
-            for (let i = 0; i < this.userData.shoppingCart.length; i++) {
-                this.merches[this.userData.shoppingCart[i]].shoppinCart = true
+            if (!isNaN(this.userData.shoppingCart[0])) {
+                for (let i = 0; i < this.userData.shoppingCart.length; i++) {
+                    this.merches[this.userData.shoppingCart[i]].shoppinCart = true
+                }
             }
             this.loading = false
         },
@@ -279,6 +276,12 @@ const vm = new Vue({
         "merches": function (newValue, oldValue) {
             console.log(oldValue)
             console.log(newValue);
+        },
+        $route(newValue, oldValue) {
+            if (newValue.name === 'UndertHandleIndex') {
+                console.log(1345);
+                this.getUserData()
+            }
         }
     }
 })

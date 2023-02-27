@@ -15,12 +15,17 @@
             <div class="logo">LOGO</div>
         </header>
         <main>
-            <form action="" class="form">
-                帳號 <input type="text" v-model="input.userName" placeholder="請輸入帳號">
-                密碼 <input type="text" v-model="input.password" placeholder="請輸入密碼">
-                Email <input type="email" v-model="input.email" placeholder="請輸入電子郵件">
+            <div class="form" @keyup.enter="pushUser()" style="height:70vh;">
+                <h1 style="text-align:center;margin-top: 5vh;">註冊帳號</h1>
+                <input type="text" v-model="input.userName" id="accText">
+                <label id="acc" for="#accText">帳號</label>
+                <input type="text" v-model="input.password" id="pwdText">
+                <label id="pwd" for="#pwdText">密碼</label>
+                <input type="text" v-model="input.email" id="emailText">
+                <label id="email" for="#emailText">Email</label>
                 <input type="submit" @click="pushUser()">
-            </form>
+                <a href="login.html" style="text-decoration: none;margin-top:2vh; color:rgb(78, 47, 9)">以有帳號?登入</a>
+            </div>
         </main>
     </div>
 

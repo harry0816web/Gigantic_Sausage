@@ -5,84 +5,188 @@
       "merchPicSrc": "pictures/sausage6.png",
       "merchName": "normal sausage",
       "merchPrice": 180,
-      "like": false
+      "like": false,
+      "description": "normal flavor has wonderful taste",
+      "quantity": 10,
+      "comments": [
+        {
+          "user": "harry0816",
+          "text": "juicy and delicious!!!!"
+        },
+        {
+          "user": "harry0816",
+          "text": "juicy and delicious!!!!"
+        },
+        {
+          "user": "harry0816",
+          "text": "juicy and delicious!!!!"
+        }
+      ]
     },
     {
       "id": 2,
       "merchPicSrc": "pictures/sausage1.png",
       "merchName": "sweet sausage",
       "merchPrice": 150,
-      "like": false
+      "like": false,
+      "description": "normal flavor has wonderful taste",
+      "quantity": 10,
+      "comments": [
+        {
+          "user": "harry0816",
+          "text": "juicy and delicious!!!!"
+        }
+      ]
     },
     {
       "id": 3,
       "merchPicSrc": "pictures/sausage2.png",
       "merchName": "spicy sausage",
       "merchPrice": 180,
-      "like": false
+      "like": false,
+      "description": "normal flavor has wonderful taste",
+      "quantity": 10,
+      "comments": [
+        {
+          "user": "harry0816",
+          "text": "juicy and delicious!!!!"
+        }
+      ]
     },
     {
       "id": 4,
       "merchPicSrc": "pictures/sausage3.png",
       "merchName": "pepper sausage",
       "merchPrice": 120,
-      "like": false
+      "like": false,
+      "description": "normal flavor has wonderful taste",
+      "quantity": 10,
+      "comments": [
+        {
+          "user": "harry0816",
+          "text": "juicy and delicious!!!!"
+        }
+      ]
     },
     {
       "id": 5,
       "merchPicSrc": "pictures/sausage4.png",
       "merchName": "garlic sausage",
       "merchPrice": 130,
-      "like": false
+      "like": false,
+      "description": "normal flavor has wonderful taste",
+      "quantity": 10,
+      "comments": [
+        {
+          "user": "harry0816",
+          "text": "juicy and delicious!!!!"
+        }
+      ]
     },
     {
       "id": 6,
       "merchPicSrc": "pictures/sausage5.png",
       "merchName": "curry sausage",
       "merchPrice": 200,
-      "like": false
+      "like": false,
+      "description": "normal flavor has wonderful taste",
+      "quantity": 10,
+      "comments": [
+        {
+          "user": "harry0816",
+          "text": "juicy and delicious!!!!"
+        }
+      ]
     },
     {
       "id": 7,
       "merchPicSrc": "pictures/sausage6.png",
       "merchName": "wine sausage",
       "merchPrice": 150,
-      "like": false
+      "like": false,
+      "description": "normal flavor has wonderful taste",
+      "quantity": 10,
+      "comments": [
+        {
+          "user": "harry0816",
+          "text": "juicy and delicious!!!!"
+        }
+      ]
     },
     {
       "id": 8,
       "merchPicSrc": "pictures/sausage1.png",
       "merchName": "sweet sausage",
       "merchPrice": 185,
-      "like": false
+      "like": false,
+      "description": "normal flavor has wonderful taste",
+      "quantity": 10,
+      "comments": [
+        {
+          "user": "harry0816",
+          "text": "juicy and delicious!!!!"
+        }
+      ]
     },
     {
       "id": 9,
       "merchPicSrc": "pictures/sausage2.png",
       "merchName": "spicy sausage",
       "merchPrice": 185,
-      "like": false
+      "like": false,
+      "description": "normal flavor has wonderful taste",
+      "quantity": 10,
+      "comments": [
+        {
+          "user": "harry0816",
+          "text": "juicy and delicious!!!!"
+        }
+      ]
     },
     {
       "id": 10,
       "merchPicSrc": "pictures/sausage3.png",
       "merchName": "pepper sausage",
       "merchPrice": 199,
-      "like": false
+      "like": false,
+      "description": "normal flavor has wonderful taste",
+      "quantity": 10,
+      "comments": [
+        {
+          "user": "harry0816",
+          "text": "juicy and delicious!!!!"
+        }
+      ]
     },
     {
       "id": 11,
       "merchPicSrc": "pictures/sausage1.png",
       "merchName": "sweet sausage",
       "merchPrice": 100,
-      "like": false
+      "like": false,
+      "description": "normal flavor has wonderful taste",
+      "quantity": 10,
+      "comments": [
+        {
+          "user": "harry0816",
+          "text": "juicy and delicious!!!!"
+        }
+      ]
     },
     {
       "id": 12,
       "merchPicSrc": "pictures/sausage2.png",
       "merchName": "spicy sausage",
       "merchPrice": 250,
-      "like": false
+      "like": false,
+      "description": "normal flavor has wonderful taste",
+      "quantity": 10,
+      "comments": [
+        {
+          "user": "harry0816",
+          "text": "juicy and delicious!!!!"
+        }
+      ]
     }
   ],
   "members": [
@@ -93,8 +197,8 @@
       "email": "harry940816@gmail.com",
       "like": [
         1,
-        1,
-        4
+        4,
+        5
       ],
       "shoppingCart": [
         2,
@@ -108,14 +212,19 @@
       "password": "asdf",
       "email": "asdf@gmail.com",
       "like": [
-        1,
         2,
-        3,
-        5,
-        4
+        5
       ],
       "shoppingCart": [],
       "id": 2
+    },
+    {
+      "userName": "qwer",
+      "password": "qwer",
+      "email": "qwer@gmail.com",
+      "like": [],
+      "shoppingCart": [],
+      "id": 3
     }
   ]
 }

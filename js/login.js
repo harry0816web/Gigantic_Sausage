@@ -32,8 +32,10 @@ const vm = new Vue({
                         let shoppingCart = res.data[0].like.join('|')
                         document.cookie = `id=${res.data[0].id};max-age=3600*24`
                         document.cookie = `userName=${res.data[0].userName};max-age=3600*24`
-                        document.cookie = `like=${like};max-age=3600*24`
-                        document.cookie = `shoppingCart=${shoppingCart};max-age=3600*24`
+                        if (res.data[0].like)
+                            document.cookie = `like=${like};max-age=3600*24`
+                        if (res.data[0].shoppingCart)
+                            document.cookie = `shoppingCart=${shoppingCart};max-age=3600*24`
                         location.href = "index.html"
                     }
                     else {

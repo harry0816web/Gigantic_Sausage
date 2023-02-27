@@ -275,6 +275,21 @@ body {
     outline: none;
 }
 
+.merch ul li:nth-child(2) div button i {
+    font-size: 2vh;
+}
+
+.merch ul {
+    font-size: 2vh;
+    position: relative;
+    left: 1.5vw;
+}
+
+.shoppingCart {
+    position: relative;
+    left: 0.25vw;
+}
+
 .merchPic {
     height: 25vh;
     width: 13vw;

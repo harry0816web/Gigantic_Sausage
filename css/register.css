@@ -1,21 +1,118 @@
+/* global settings */
+html,
 body {
-    display: flex;
-    justify-content: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: rgb(246, 134, 93);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: visible;
 }
+
+::-webkit-scrollbar {
+    width: 0.4vw;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(127, 121, 240);
+    border-radius: 50px;
+    height: 5vh;
+}
+
+::-webkit-scrollbar-button {
+    background-color: gray;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: gray;
+
+}
+
+
+/* header */
+.sticky-nav-bar {
+    position: sticky;
+    top: 0px;
+    height: 10vh;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* leftSide */
+.logo {
+    width: 15vw;
+    padding-left: 1vw;
+    font-size: 3vh;
+}
+
 
 .form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 40vw;
-    height: 50vh;
-    padding: 5%;
+    width: 25vw;
+    height: 60vh;
+    margin-top: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    border: black 2px solid;
+    box-shadow: 0 0 1vh;
+    background-color: rgba(255, 228, 196, 0.298);
 }
 
-.form input {
-    width: 20vw;
-    margin-top: 5%;
+.form input[type=text] {
+    background-color: transparent;
+    width: 10vw;
+    transition: width .3s ease-in-out;
+    margin-top: 5vh;
+    border: none;
+    border-bottom: black 2px solid;
+    outline: none;
+    z-index: 3;
 }
+
+.form input[type=submit] {
+    background-color: transparent;
+    width: 5vw;
+    margin-top: 5%;
+    border-bottom: black 2px solid;
+    outline: none;
+}
+
+.form input[type=text]:focus {
+    width: 20vw;
+    transition: width .2s ease-in-out;
+}
+
+#accText:focus~#acc,
+#pwdText:focus~#pwd,
+#emailText:focus~#email {
+    right: 9vw;
+    bottom: 9vh;
+    transition: right .2s ease-in-out, bottom .2s ease-in-out;
+}
+
+#acc,
+#pwd,
+#email {
+    z-index: 0;
+    position: relative;
+    bottom: 7vh;
+    right: 0;
+    transition: right .2s ease-in-out, bottom .2s ease-in-out;
+}
+
+.canclePlaceHolder_animation {
+    top: 5vh;
+    animation-name: placeHolderMove;
+    animation-duration: 1s;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+}
+
 
 .form input[type=submit] {
     width: 10vw;
