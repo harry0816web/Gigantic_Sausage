@@ -4,7 +4,8 @@ let data = {
         id: 0,
         userName: "",
         like: [],
-        shoppingCart: []
+        shoppingCart: [],
+        birthDate: ''
     },
     merches: [
         {
@@ -103,27 +104,38 @@ let data = {
     placeHolder: "輸入想搜尋的商品",
     inputSearch: '',
     loading: false,
-    arr: []
+    arr: [],
+    couponCode: ''
 }
+// 篩選:熱銷，most View  會員:忘記密碼
 const vm = new Vue({
     el: '#app',
     data: data,
     computed: {
         //filter
         onList() {
-            if (this.filter.price != "none" && this.filter.flavor == "all" && this.inputSearch == '') {
-                return this.sortByPrice(this.merchesOnList)
-            }
             if (this.inputSearch != "") {
-                return this.sortByPrice(this.merches.filter(item => {
+                return this.merchesOnList = this.sortByPrice(this.merches.filter(item => {
                     let inputText = this.inputSearch.toLowerCase()
                     if (item.merchName.indexOf(inputText) != -1) {
                         return item
                     }
                 }))
             }
+            if (this.filter.price != "none" && this.filter.flavor == "all" && this.inputSearch == '') {
+                return this.merchesOnList = this.sortByPrice(this.merches.filter((item, i) => {
+                    if (i < this.showRange)
+                        return item
+                }))
+            }
+            else if (this.filter.flavor == "all") {
+                return this.merchesOnList = this.sortByPrice(this.merches.filter((item, i) => {
+                    if (i < this.showRange)
+                        return item
+                }))
+            }
             else if (this.filter.flavor != "all") {
-                return this.sortByPrice(this.merches.filter(item => {
+                return this.merchesOnList = this.sortByPrice(this.merches.filter(item => {
                     if (item.merchName.indexOf(this.filter.flavor) != -1)
                         return item
                 }))
@@ -143,7 +155,7 @@ const vm = new Vue({
         },
         //be chosen and like == false => add in collection
         collection() {
-            return this.merchesOnList.filter(item => {
+            return this.merches.filter(item => {
                 if (item.like == true)
                     return item
             })
@@ -157,10 +169,6 @@ const vm = new Vue({
                 this.showRange = this.merches.length
             }
             else this.showRange += 9
-        },
-        //go to merch page
-        goToMerch(index) {
-            location.href = `merch.html?index=${index}like=${this.merchesOnList[index].like}userId=${this.userData.id}`;
         },
         sortByPrice(arr) {
             if (this.filter.price == 'price_highToLow')
@@ -176,19 +184,27 @@ const vm = new Vue({
                 return arr              //default
             }
         },
-        changeLike(index) {
+        changeLike(index) { //不應存index應存id
+            console.log(index);
+            let id = this.merchesOnList[index].id
+            console.log(id);
+            console.log(this.merchesOnList);
             let boolean = (this.merchesOnList[index].like ? false : true)
-            this.merchesOnList[index].like = boolean
-            this.merches[index].like = boolean
+            console.log(boolean);
+            // this.merchesOnList[id].like = boolean
+            // console.log(this.merchesOnList[index].like);
+            this.merches[id - 1].like = boolean
+            let L = this.merches.length
+            for (let i = 0; i < L; i++) {
+                if (this.merches[i].id == this.merchesOnList[index].id) {
+                    this.merches[i].like = boolean
+                }
+            }
             if (boolean) {    //add like
-                this.userData.like.push(index)
-                let changeLike = this.userData.like
+                this.userData.like.push(id)
                 axios.patch(`http://localhost:5000/members/${this.userData.id}`,
                     {
-                        like: changeLike
-                    })
-                    .then((res) => {
-                        this.userData.like = res.data.like
+                        like: this.userData.like
                     })
                     .catch((err) => {
                         console.log(err);
@@ -197,14 +213,19 @@ const vm = new Vue({
             else {          //delete like
                 let indexOfIndex
                 for (let i = 0; i < this.userData.like.length; i++) {
-                    if (index == this.userData.like[i]) {
+                    if (id == this.userData.like[i]) {
                         indexOfIndex = i
                         console.log(indexOfIndex);
                     }
                 }
-                console.log(this.userData.like);
-                this.userData.like.splice(indexOfIndex, indexOfIndex + 1)
-                console.log(this.userData.like);
+                this.userData.like.splice(indexOfIndex, 1)
+                axios.patch(`http://localhost:5000/members/${this.userData.id}`,
+                    {
+                        like: this.userData.like
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    })
             }
             let likeCookieStr = this.userData.like.join('|')
             document.cookie = `like=${likeCookieStr};max-age=3600*24`
@@ -224,30 +245,31 @@ const vm = new Vue({
             this.userData.id = this.getCookie("id")
             this.userData.userName = this.getCookie("userName")
             this.userData.like = this.getCookie("like")
-            this.userData.shoppingCart = this.getCookie("shoppingCart")
             //注意空值
             if (!isNaN(this.userData.like[0])) {
                 for (let i = 0; i < this.userData.like.length; i++) {
-                    this.merches[this.userData.like[i]].like = true
+                    this.merches[this.userData.like[i] - 1].like = true
                 }
             }
-            if (!isNaN(this.userData.shoppingCart[0])) {
-                for (let i = 0; i < this.userData.shoppingCart.length; i++) {
-                    this.merches[this.userData.shoppingCart[i]].shoppinCart = true
-                }
-            }
+            axios.get(`http://localhost:5000/members/${this.userData.id}`)
+                .then((res) => {
+                    this.userData.shoppingCart = res.data.shoppingCart
+                })
             this.loading = false
         },
         getCookie(cName) {
             let name = cName + "="
             let ca = document.cookie.split(';')
-            if (cName == "like" || cName == "shoppingCart") {
+            if (cName == "like") {
                 for (let i = 0; i < ca.length; i++) {
                     let c = ca[i].trim()
                     if (c.indexOf(name) == 0) {
                         let arrStr = c.substring(name.length, c.length).split('|')
                         let arr = []
-                        for (let i = 0; i < arrStr.length; i++) {
+                        let start = 0
+                        if (arrStr[0] == '')
+                            start = 1
+                        for (let i = start; i < arrStr.length; i++) {//避免第一個|
                             arr.push(parseInt(arrStr[i]))
                         }
                         return arr
@@ -263,6 +285,100 @@ const vm = new Vue({
                 }
             }
             return ""
+        },
+        addToCart(id) {
+            swal.fire({
+                title: "新增到購物車?",
+                showCancelButton: true,
+                icon: 'question'
+            })
+                .then((res) => {
+                    if (res.value) {
+                        let findObj = this.userData.shoppingCart.filter((item, index) => {
+                            if (item.id == id) {
+                                item.quantity += 1
+                                return item
+                            }
+                        })
+                        if (!findObj.length) {
+                            this.userData.shoppingCart.push({
+                                id: id,
+                                quantity: 1
+                            })
+                        }
+                        console.log(this.userData.shoppingCart);
+                        axios.patch(`http://localhost:5000/members/${this.userData.id}`,
+                            {
+                                shoppingCart: this.userData.shoppingCart
+                            })
+                            .then((res) => {
+                                swal.fire("已新增至購物車!", '', 'success')
+                            })
+                    }
+                    else {
+                        swal.fire("您取消了新增")
+                    }
+                })
+        },
+        async generateCouponCode() {
+            //axios不會按照work flow?   
+            await axios.get(`http://localhost:5000/members/${this.userData.id}`)
+                .then((res) => {
+                    if (res.data.coupon == 'used') {
+                        console.log(used);
+                    }
+                    else if (res.data.coupon) {
+                        this.couponCode = res.data.coupon
+                        swal.fire(`生日快樂! ${this.userData.userName}`, "這是您的100元折扣碼:" + this.couponCode, "info")
+                    }
+                    else {
+                        let codeSource = 'ABCDEFGHIJKLMNOPQRSTUVWXYNZ0123456789'
+                        let length = codeSource.length
+                        let randNum = 0
+                        for (let i = 0; i < 8; i++) {
+                            randNum = Math.floor(Math.random() * length)
+                            this.couponCode += codeSource[randNum]
+                        }
+                        axios.patch(`http://localhost:5000/members/${this.userData.id}`, {
+                            coupon: this.couponCode
+                        })
+                            .then((res) => {
+                                console.log(res);
+                            })
+                        swal.fire(`生日快樂! ${this.userData.userName}`, "這是您的100元折扣碼:" + this.couponCode, "info")
+                    }
+                })
+
+        },
+        checkUserData() {
+            location.href = `userData.html?id=${this.userData.id}`
+        },
+        //go to merch page
+        goToMerch(id) {
+            location.href = `merch.html?index=${id - 1}like=${this.merches[id - 1].like}userId=${this.userData.id}`;
+        },
+        logOut() {
+            Swal.fire({
+                title: "確認登出?",
+                showCancelButton: true
+            }).then(function (result) {
+                if (result.value) {
+                    document.cookie = `id=;expire${Date.toGMTString}`
+                    document.cookie = `userName=;expire${Date.toGMTString}`
+                    document.cookie = `like=;expire${Date.toGMTString}`
+                    document.cookie = `shoppingCart=;expire${Date.toGMTString}`
+                    location.href = "login.html"
+                }
+                else {
+                    Swal.fire("您取消了登出");
+                }
+            });
+        },
+        shoppingCart() {
+            location.href = "shoppingCart.html"
+        },
+        checkOrder() {
+            location.href = "orders.html"
         }
     },
     created() {
@@ -270,6 +386,13 @@ const vm = new Vue({
     mounted() {
         this.loading = true
         this.getUserData()
+        this.userData.birthDate = parseInt(this.getCookie("birthDate").replace(/[^0-9]/ig, "")) % 10000 // ig代表全文查找，忽略大小寫，找到後已空字串replace
+        let today = new Date
+        let toDate = (today.getMonth() + 1) * 100 + today.getDate()
+        if (toDate == this.userData.birthDate) {
+            this.generateCouponCode()
+        }
+
         //把原先的data蓋過去了
     },
     watch: {

@@ -1,0 +1,115 @@
+/* global settings */
+html,
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: rgb(246, 134, 93);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: visible;
+}
+
+::-webkit-scrollbar {
+    width: 0.4vw;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(250, 70, 20);
+    border-radius: 50px;
+    height: 5vh;
+}
+
+::-webkit-scrollbar-button {
+    background-color: rgb(247, 165, 165);
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: rgb(247, 165, 165);
+
+}
+
+.sticky-nav-bar {
+    position: sticky;
+    top: 0px;
+    height: 10vh;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* leftSide */
+.logo {
+    width: 15vw;
+    padding-left: 1vw;
+    font-size: 3vh;
+}
+
+.title {
+    margin-top: 2vh;
+    height: 9vh;
+    font-size: 10vh;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(255, 212, 199)
+}
+
+.orderTable {
+    width: 70vw;
+    height: auto;
+    margin-left: 15vw;
+    background-color: rgba(245, 245, 220);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-radius: 20px;
+    margin-bottom: 5%;
+}
+
+.orderTable .order {
+    height: auto;
+    width: 50vw;
+    border: 2px solid black;
+    background-color: rgb(229, 229, 162);
+    border-radius: 20px;
+}
+
+.orderTitle {
+    font-size: 5vh;
+    text-align: center;
+}
+
+.orderTable hr {
+    border-color: black;
+}
+
+.order {
+    padding: 5%;
+    padding-top: 1%;
+    margin-bottom: 5%;
+}
+
+.headline,
+.orderDetail {
+    display: flex;
+    justify-self: center;
+}
+
+.headline div {
+    width: 35vw;
+    display: flex;
+    justify-items: start;
+}
+
+.orderDetail div {
+    width: 35vw;
+    display: flex;
+    justify-items: start;
+}
+
+.orderDetail div div {
+    width: 5vw;
+}

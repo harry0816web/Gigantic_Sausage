@@ -1,0 +1,154 @@
+/* global settings */
+html,
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: rgb(246, 134, 93);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: visible;
+}
+
+::-webkit-scrollbar {
+    width: 0.4vw;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(250, 70, 20);
+    border-radius: 50px;
+    height: 5vh;
+}
+
+::-webkit-scrollbar-button {
+    background-color: rgb(247, 165, 165);
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: rgb(247, 165, 165);
+
+}
+
+.sticky-nav-bar {
+    position: sticky;
+    top: 0px;
+    height: 10vh;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* leftSide */
+.logo {
+    width: 15vw;
+    padding-left: 1vw;
+    font-size: 3vh;
+}
+
+.title {
+    margin-top: 2vh;
+    height: 9vh;
+    font-size: 10vh;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(255, 212, 199)
+}
+
+.merchTable {
+    width: 70vw;
+    height: auto;
+    margin-left: 15vw;
+    background-color: rgba(245, 245, 220);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-radius: 20px;
+}
+
+.merchInfo:nth-child(1) {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.merchInfo:nth-last-child(1) {
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.merchInfo {
+    width: 100%;
+    height: 25vh;
+    border: black 2px solid;
+    display: grid;
+    grid-template-areas: "deleteBtn pic merchName merchName . quantity"
+        "deleteBtn pic price . . quantity";
+}
+
+.quantity {
+    width: 9vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center
+}
+
+.quantity button {
+    height: 4vh;
+    color: white;
+    background-color: #509fe1;
+    border: none;
+    width: 2vw;
+    border-radius: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantity input {
+    height: 4vh;
+    width: 3vw;
+}
+
+.calculate {
+    width: 85vw;
+    height: 20vh;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 4vh;
+    font-weight: bold;
+}
+
+.coupon {
+    width: 19vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 5vw;
+}
+
+.coupon input {
+    height: 4vh;
+    width: 10vw;
+    border-radius: 20px;
+    padding-left: 0.7vw;
+    border-bottom: 2px solid black;
+    outline: none;
+    font-size: 2.5vh
+}
+
+.calculate button {
+    height: 6vh;
+    width: 5vw;
+    margin-left: 2vw;
+    border-radius: 20px;
+    background-color: rgb(142, 88, 65);
+    color: whitesmoke;
+
+}
+
+.calculate button:hover {
+    background-color: rgb(255, 163, 117);
+    color: whitesmoke;
+    transition: background-color .5s linear, color .5s linear;
+}

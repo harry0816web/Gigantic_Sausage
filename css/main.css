@@ -14,17 +14,17 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(127, 121, 240);
+    background-color: rgb(250, 70, 20);
     border-radius: 50px;
     height: 5vh;
 }
 
 ::-webkit-scrollbar-button {
-    background-color: gray;
+    background-color: rgb(247, 165, 165);
 }
 
 ::-webkit-scrollbar-track-piece {
-    background-color: gray;
+    background-color: rgb(247, 165, 165);
 
 }
 
@@ -37,7 +37,7 @@ body {
     top: 0px;
     height: 10vh;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.3);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -97,7 +97,7 @@ body {
     /* frame */
     width: 20vw;
     height: 40vh;
-    background-color: rgb(211, 208, 212);
+    background-color: rgb(236, 195, 174);
     position: absolute;
     top: 10vh;
     right: 0vw;
@@ -148,7 +148,7 @@ body {
 }
 
 .ctrlBtn {
-    top: 28vh;
+    top: 32vh;
     height: 10vh;
     width: 5vw;
     background-color: transparent;

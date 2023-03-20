@@ -14,17 +14,18 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(127, 121, 240);
+    background-color: rgb(250, 70, 20);
     border-radius: 50px;
     height: 5vh;
 }
 
 ::-webkit-scrollbar-button {
-    background-color: gray;
+    background-color: rgb(247, 165, 165);
 }
 
 ::-webkit-scrollbar-track-piece {
-    background-color: gray;
+    background-color: rgb(247, 165, 165);
+
 }
 
 
@@ -36,7 +37,7 @@ body {
     top: 0px;
     height: 10vh;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.3);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,6 +50,76 @@ body {
     font-size: 3vh;
 }
 
+/* middle */
+.search {
+    font-size: 3vh;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+}
+
+.unfold {
+    animation-duration: .3s;
+    animation-direction: alternate;
+    animation-name: unfold;
+    transform-origin: top left;
+}
+
+@keyframes unfold {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.search>input {
+    font-size: 2vh;
+    border: none;
+    border-bottom: 0.1vh black solid;
+    outline: none;
+    background-color: transparent;
+
+}
+
+/* rightside */
+.functions {
+    width: 15vw;
+    font-size: 3vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* collection */
+.collection {
+    /* frame */
+    width: 20vw;
+    height: 40vh;
+    background-color: rgb(236, 195, 174);
+    position: absolute;
+    top: 10vh;
+    right: 0vw;
+    overflow-y: scroll;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+
+}
+
+/* internal */
+.merchTr img {
+    max-width: 25px;
+    min-height: 25px;
+}
+
+#collectionToggler:checked~.collection {
+    transform: scaleY(1);
+    opacity: 1;
+    transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+}
 
 /* main */
 .introduction {
@@ -72,7 +143,23 @@ body {
 }
 
 .description .calculator {
+    width: 15vw;
+    height: 4vh;
     margin-top: 2vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.calculator button {
+    height: 4vh;
+    color: white;
+    background-color: #509fe1;
+    border: none;
+    width: 2vw;
+    border-radius: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .description .calculator input {
@@ -80,27 +167,81 @@ body {
 }
 
 .commentsBoard {
-    width: 30vw;
+    width: 70vw;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    justify-content: space-around;
+    /* align-items: center; */
 }
 
 .commentsBoard textarea {
     background-color: rgb(239, 228, 179);
     outline: none;
-    border-radius: 25px;
+    border-radius: 15px;
     width: 25vw;
     height: 10vh;
     padding: 2.5vh;
-    font-size: 2vh;
+    font-size: 2.5vh
 }
 
-.commentsBoard table tr:nth-child(1) {
-    align-items: start;
+.newComments {
+    width: 25vw;
+    height: 20vh;
 }
 
-.commentsBoard table tr {
+.newComments .submit {
+    height: 4vh;
+    width: 4vw;
+    position: relative;
+    top: 2vh;
+    left: 12vw;
+    background-color: beige;
+    border: none;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.commentsBoard div .title {
     width: 30vw;
+    height: 10vh;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    background-color: rgb(246, 162, 98);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.commentsBoard table {
+    padding: 0;
+    background-color: rgb(250, 230, 150);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: auto;
+    text-align: center;
+    position: relative;
+    width: 30vw;
+}
+
+.commentsBoard table tr td:nth-child(1) {
+    position: absolute;
+    left: 2vw;
+}
+
+.commentsBoard table tr td:nth-child(2) {
+    margin-top: 4vh;
+    position: relative;
+    right: 5vw;
+}
+
+.commentsBoard table tr:nth-child(n+1) {
     display: flex;
     justify-content: space-evenly;
+    border-bottom: 2px solid black;
+}
+
+.commentsBoard table tr:nth-last-child(1) {
+    border: none;
 }

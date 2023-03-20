@@ -45,12 +45,13 @@ main img {
     top: 5vh;
 }
 
-.form {
+.data_form {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 25vw;
-    height: 60vh;
+    width: 26vw;
+    height: 50vh;
     margin-top: 30vh;
     margin-left: auto;
     margin-right: auto;
@@ -59,68 +60,45 @@ main img {
     background-color: rgba(255, 228, 196, 0.298);
 }
 
-.form input[type=text] {
-    background-color: transparent;
-    width: 8vw;
-    transition: width .3s ease-in-out;
-    margin-top: 5vh;
-    border: none;
-    border-bottom: black 2px solid;
-    outline: none;
-    z-index: 3;
+.data_form input {
+    width: 10vw;
 }
 
-.form input[type=text]:focus {
-    width: 15vw;
-    transition: width .2s ease-in-out;
-}
-
-#accText:focus~#acc,
-#pwdText:focus~#pwd {
-    right: 9vw;
-    bottom: 9vh;
-    transition: right .2s ease-in-out, bottom .2s ease-in-out;
-}
-
-#acc,
-#pwd {
-    z-index: 0;
-    position: relative;
-    bottom: 7vh;
-    right: 0;
-    transition: right .2s ease-in-out, bottom .2s ease-in-out;
-}
-
-.canclePlaceHolder_animation {
-    top: 5vh;
-    animation-name: placeHolderMove;
-    animation-duration: 1s;
-    animation-direction: reverse;
-    animation-fill-mode: forwards;
-}
-
-
-.form input[type=submit] {
-    background-color: transparent;
-    width: 5vw;
-    margin-top: 5%;
-    border-bottom: black 2px solid;
-    outline: none;
-
-    border-radius: 5vh;
+.data_form h1 {
     height: 4vh;
-    width: 5vw;
-    color: rgb(8, 8, 8);
-    font-family: bold;
-    font-size: 2vh;
+}
 
-    transition: background-color .1s ease-in-out, color .1s ease-in-out;
+.acc,
+.pwd {
+    height: 10vh;
+    width: 70%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
-.form input[type=submit]:hover {
+.date {
+    height: 10vh;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn {
+    height: 4vh;
+    width: 5vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(235, 146, 116);
+    transition: background-color .1s ease-in-out, color .1s ease-in-out;
+}
+
+.btn:hover {
     background-color: rgb(255, 110, 38);
     color: whitesmoke;
     transition: background-color .5s linear, color .5s linear;
