@@ -43,7 +43,8 @@ let vm = new Vue({
         changeLike() {
             if (this.likeOrNot == "t") {
                 this.likeOrNot = 'f'
-                this.userLike.splice(this.userLike.indexOf(index), 1)
+                //不要在外部設定與data內部相同名稱的變數
+                this.userLike.splice(this.userLike.indexOf(this.index), 1)
                 let likeStr = this.userLike.join('|')
                 document.cookie = `like=${likeStr};max-age=3600*24`
                 axios.patch(`http://localhost:5000/members/${this.userId}`, {

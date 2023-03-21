@@ -248,10 +248,8 @@
       "password": "asdf",
       "birthday": "2023-02-27",
       "like": [
-        0,
         10,
-        1,
-        4
+        1
       ],
       "shoppingCart": [
         {

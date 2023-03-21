@@ -248,6 +248,7 @@ const vm = new Vue({
             //注意空值
             if (!isNaN(this.userData.like[0])) {
                 for (let i = 0; i < this.userData.like.length; i++) {
+                    // console.log(this.merches[this.userData.like[i]]);
                     this.merches[this.userData.like[i] - 1].like = true
                 }
             }
