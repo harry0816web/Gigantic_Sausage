@@ -45,9 +45,13 @@ body {
 
 /* leftSide */
 .logo {
-    width: 15vw;
+    width: 13vw;
     padding-left: 1vw;
     font-size: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* middle */
