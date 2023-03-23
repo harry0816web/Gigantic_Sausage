@@ -9,22 +9,23 @@ body {
     overflow: visible;
 }
 
+
 ::-webkit-scrollbar {
     width: 0.4vw;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(127, 121, 240);
+    background-color: rgb(250, 70, 20);
     border-radius: 50px;
     height: 5vh;
 }
 
 ::-webkit-scrollbar-button {
-    background-color: gray;
+    background-color: rgb(247, 165, 165);
 }
 
 ::-webkit-scrollbar-track-piece {
-    background-color: gray;
+    background-color: rgb(247, 165, 165);
 
 }
 

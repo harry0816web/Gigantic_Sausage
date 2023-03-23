@@ -9,31 +9,32 @@ body {
     overflow: visible;
 }
 
+
 ::-webkit-scrollbar {
     width: 0.4vw;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(127, 121, 240);
+    background-color: rgb(250, 70, 20);
     border-radius: 50px;
     height: 5vh;
 }
 
 ::-webkit-scrollbar-button {
-    background-color: gray;
+    background-color: rgb(247, 165, 165);
 }
 
 ::-webkit-scrollbar-track-piece {
-    background-color: gray;
+    background-color: rgb(247, 165, 165);
 
 }
 
-main img {
+.logoPic {
     height: 25vh;
     width: 8vw;
     position: absolute;
     left: 33vw;
-    top: 5vh;
+    top: 0vh;
 }
 
 .logoTitle {
@@ -42,24 +43,45 @@ main img {
     font-weight: bold;
     position: absolute;
     left: 40vw;
-    top: 5vh;
+    top: 0vh;
 }
 
 .form {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 25vw;
+    justify-content: center;
+    width: 50vw;
     height: 60vh;
-    margin-top: 30vh;
+    margin-top: 25vh;
     margin-left: auto;
     margin-right: auto;
+    /* margin-bottom: 5vh;   */
     border: black 2px solid;
     box-shadow: 0 0 1vh;
-    background-color: rgba(255, 228, 196, 0.298);
 }
 
-.form input[type=text] {
+.form .leftSide {
+    width: 25vw;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form .rightSide {
+    width: 25vw;
+    background-color: rgb(254, 190, 66);
+}
+
+.rightSide .formInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50vh;
+    background-color: rgba(255, 248, 202, 0.494);
+    border-radius: 20px;
+}
+
+.rightSide input[type=text] {
     background-color: transparent;
     width: 8vw;
     transition: width .3s ease-in-out;
@@ -70,14 +92,15 @@ main img {
     z-index: 3;
 }
 
-.form input[type=text]:focus {
+
+.rightSide input[type=text]:focus {
     width: 15vw;
     transition: width .2s ease-in-out;
 }
 
 #accText:focus~#acc,
 #pwdText:focus~#pwd {
-    right: 9vw;
+    right: 7vw;
     bottom: 9vh;
     transition: right .2s ease-in-out, bottom .2s ease-in-out;
 }
@@ -125,3 +148,62 @@ main img {
     color: whitesmoke;
     transition: background-color .5s linear, color .5s linear;
 }
+
+@keyframes run {
+    0% {
+        top: -30vh;
+        width: 10vw;
+    }
+
+    55% {
+        top: 50vh;
+        width: 10vw;
+        height: 30vh;
+    }
+
+    56% {
+        height: 20vh;
+        width: 10vw;
+    }
+
+    70% {
+        height: 30vh;
+        width: 10vw;
+    }
+
+    70% {
+        top: 40vh;
+        width: 10vw;
+    }
+
+    to {
+        top: 50vh;
+        width: 10vw;
+    }
+}
+
+
+.bgcPic {
+    animation-name: run;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+/* .form {
+    position: relative;
+    animation-name: run;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+   
+}  */
+
+/* .bgcPic_reverse {
+    animation-name: run;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+} */

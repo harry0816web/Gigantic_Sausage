@@ -12,16 +12,28 @@
 <body>
     <div id="app">
         <main>
-            <img src="pictures/logo.png" alt="">
+            <img src="pictures/logo.png" alt="" class="logoPic">
             <h1 class="logoTitle">igantic Sausage</h1>
             <div class="form" @keyup.enter="getUser()">
-                <h1 style="text-align:center;margin-top: 5vh;">登入</h1>
-                <input type="text" v-model="input.userName" id="accText">
-                <label id="acc" for="#accText">帳號</label>
-                <input type="text" v-model="input.password" id="pwdText">
-                <label id="pwd" for="#pwdText">密碼</label>
-                <input type="submit" @click="getUser()" value="登入">
-                <a href="register.html" style="text-decoration: none;margin-top:2vh; color:rgb(78, 47, 9)">沒有帳號?點我註冊</a>
+                <div class="leftSide">
+                    <img src="pictures/loginPic.jpg" alt="" style="height:60vh;width:25vw;">
+                </div>
+                <div class="rightSide" style="border:5vh solid rgb(254, 190, 66)">
+                    <div class="formInput">
+                        <h1 style="text-align:center;">登入</h1>
+                        <input type="text" v-model="input.userName" id="accText">
+                        <label id="acc" for="#accText"><i class="fa-solid fa-user"></i></label>
+                        <input type="text" v-model="input.password" id="pwdText">
+                        <label id="pwd" for="#pwdText"><i class="fa-solid fa-lock"></i></label>
+                        <input type="submit" @click="getUser()" value="登入">
+                        <a href="register.html"
+                            style="text-decoration: none;margin-top:2vh; color:rgb(78, 47, 9)">沒有帳號?點我註冊</a>
+                    </div>
+                </div>
+                <img src="pictures/loginBgc1.webp" alt=""
+                    style="height:25vh;width:10vw;position:absolute;right:5vw;top:0vh;" class="bgcPic">
+                <img src="pictures/loginBgc2.png" alt="" style="height:25vh;position:absolute;left:5vw;top:0vh;"
+                    class="bgcPic">
             </div>
         </main>
     </div>

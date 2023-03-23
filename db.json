@@ -277,9 +277,27 @@
       "password": "qwer",
       "birthday": "2019-03-16",
       "like": [
-        3
+        1,
+        5
       ],
-      "shoppingCart": [],
+      "shoppingCart": [
+        {
+          "id": 5,
+          "quantity": 1
+        },
+        {
+          "id": 4,
+          "quantity": 1
+        },
+        {
+          "id": 1,
+          "quantity": 1
+        },
+        {
+          "id": 3,
+          "quantity": "10"
+        }
+      ],
       "id": 4,
       "coupon": "AJS1JJIT"
     },

@@ -9,6 +9,7 @@ body {
     overflow: visible;
 }
 
+
 ::-webkit-scrollbar {
     width: 0.4vw;
 }
@@ -27,7 +28,6 @@ body {
     background-color: rgb(247, 165, 165);
 
 }
-
 
 
 

@@ -12,22 +12,34 @@
 <body>
     <div id="app">
         <main>
-            <img src="pictures/logo.png" alt="">
+            <img src="pictures/logo.png" alt="" class="logoPic">
             <h1 class="logoTitle">igantic Sausage</h1>
-            <div class="form" @keyup.enter="pushUser()">
+            <div class="form" @keyup.enter="pushUser()" style="height:70vh;">
+                <div class="leftSide" style="height:70vh;">
+                    <img src="pictures/loginPic.jpg" alt="" style="height:70vh;width:25vw;">
+                </div>
                 <!-- 若用form在提交時，不會馬上查詢 -->
-                <h1 style="text-align:center;margin-top: 5vh;">註冊帳號</h1>
-                <input type="text" v-model="input.userName" id="accText" required>
-                <label id="acc" for="#accText">帳號</label>
-                <input type="text" v-model="input.password" id="pwdText" required>
-                <label id="pwd" for="#pwdText">密碼</label>
-                生日<input type="date" v-model="input.birthday" id="birthdayText" required
-                    style="
+                <div class="rightSide" style="border:5vh solid rgb(254, 190, 66)" style="height:70vh;">
+                    <div class="formInput" style="height:60vh;">
+                        <h1 style="text-align:center;">註冊帳號</h1>
+                        <input type="text" v-model="input.userName" id="accText" required style="margin-top:3vh;">
+                        <label id="acc" for="#accText"><i class="fa-solid fa-user"></i></label>
+                        <input type="text" v-model="input.password" id="pwdText" required>
+                        <label id="pwd" for="#pwdText"><i class="fa-solid fa-lock"></i></label>
+                        <i class="fa-solid fa-cake-candles"></i><input type="date" v-model="input.birthday"
+                            id="birthdayText" required
+                            style="
                     width: 8vw;border:none;border-bottom: black 2px solid;background-color:transparent;margin-top: 2vh;">
-                <input type="submit" @click="pushUser()" value="註冊" required>
-                <a href="login.html" style="text-decoration: none;margin-top:2vh; color:rgb(78, 47, 9)">以有帳號?登入</a>
+                        <input type="submit" @click="pushUser()" value="註冊" required style="margin-top:5vh;">
+                        <a href="login.html"
+                            style="text-decoration: none;margin-top:2vh; color:rgb(78, 47, 9)">已有帳號?登入</a>
+                    </div>
+                </div>
             </div>
         </main>
+        <img src="pictures/loginBgc1.webp" alt="" style="height:25vh;position:absolute;right:5vw;top:0vh;"
+            class="bgcPic">
+        <img src="pictures/loginBgc2.png" alt="" style="height:25vh;position:absolute;left:5vw;top:0vh;" class="bgcPic">
     </div>
 
     <script src="https://lib.baomitu.com/limonte-sweetalert2/7.33.1/sweetalert2.all.min.js"></script>
