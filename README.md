@@ -49,6 +49,18 @@
 
 ## 購物車
 ### 將商品加入購物車
-1. 從主頁加入
+* 按下購物車圖示即可將商品加入購物車
 
 ![image](https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/addToCart.gif)
+
+### 將商品從購物車移除
+* 按下垃圾桶圖示，或是數量減少至0
+
+![removeFromCart](https://user-images.githubusercontent.com/65772569/227417971-1b613a8a-9429-4b5e-a27c-01bf4fc2fc01.gif)
+
+### 結帳
+* 購買數量會有上下限，不可大於商品數量，不可小於等於0
+* 網頁會隨著每一筆更動計算總共的金額
+
+![image](https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/purchase.gif)
+
