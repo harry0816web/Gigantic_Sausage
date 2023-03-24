@@ -81,7 +81,8 @@ body {
     border-radius: 20px;
 }
 
-.rightSide input[type=text] {
+.rightSide input[type=text],
+.rightSide input[type=password] {
     background-color: transparent;
     width: 8vw;
     transition: width .3s ease-in-out;
@@ -93,7 +94,8 @@ body {
 }
 
 
-.rightSide input[type=text]:focus {
+.rightSide input[type=text]:focus,
+.rightSide input[type=password]:focus {
     width: 15vw;
     transition: width .2s ease-in-out;
 }

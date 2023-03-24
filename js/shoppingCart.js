@@ -109,7 +109,7 @@ const vm = new Vue({
                 order_detail: this.shoppingList,
                 dateTime: dd,
                 total_price: total,
-                discount: true
+                discount: this.discount
             })
                 .then((res) => {
                     swal.fire("結帳成功!", '', 'success')
