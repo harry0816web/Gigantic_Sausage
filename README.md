@@ -10,7 +10,7 @@
 * 在商品頁留下對商品的評論。
 * 檢視每次交易的明細
 * 會員有生日優惠
-## 註冊會員及登入
+## :closed_lock_with_key:註冊會員及登入
 ### 註冊頁面
 * 驗證填入資料是否完整(以下是沒填生日的例子)
 
@@ -32,7 +32,7 @@
 <img src="https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/NoThisAcc.gif" height="300" width="650" >
 </p>
 
-## 主頁
+## :house:主頁
 ### 廣告輪播圖
 * 可以讓使用者瀏覽新推出的產品
 
@@ -51,14 +51,14 @@
 * 透過條件篩選想要的商品(若只擷取頁面會無法顯示下拉選單，所以擷取整個畫面)
 
 <p align="center">
-<img src="https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/filter.gif" height="300" width="650" >
+<img src="https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/filter.gif" height="400" width="650" >
 </p>
 
 ### 輸入搜尋
 * 也能夠直接輸入品名搜尋，接著同樣可以使用篩選器排序價格(若只擷取頁面會無法顯示下拉選單，所以擷取整個畫面)
 
 <p align="center">
-<img src="https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/search.gif" height="300" width="650" >
+<img src="https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/search.gif" height="400" width="650" >
 </p>
 
 ### 收藏喜歡的商品
@@ -69,7 +69,7 @@
 <img src="https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/collection.gif" height="300" width="650" >
 </p>
 
-## 商品頁
+## :meat_on_bone:商品頁
 * 可以收藏或將商品加入購物車
 * 留下對商品的評論
 
@@ -77,7 +77,7 @@
 <img src="https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/merch.gif" height="300" width="650" >
 </p>
 
-## 購物車
+## :moneybag:購物車
 ### 將商品加入購物車
 * 按下購物車圖示即可將商品加入購物車
 
@@ -100,14 +100,14 @@
 <img src="https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/purchase.gif" height="300" width="650" >
 </p>
 
-## 購物明細
+## :page_with_curl:購物明細
 * 點擊功能列的發票圖示，即可檢視每一筆交易的明細
 
 <p align="center">
 <img src="https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/orders_detail.gif" height="300" width="650" >
 </p>
 
-## 會員資料
+## :sunglasses:	會員資料
 * 點擊功能列的人頭圖示，即可進到會員資料頁面
 ### 此時還只能看到帳號，且無法更改任何欄位
 * 需先輸入正確的密碼，才能看到帳號及密碼，並且更改
