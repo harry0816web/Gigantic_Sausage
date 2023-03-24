@@ -124,3 +124,17 @@
 </p>
 
 ## :birthday:會員生日優惠
+### 100元折扣券
+* 若該天是會員的生日，則在當日會員登入時，畫面會顯示出折扣碼
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/65772569/227448888-79598877-1ee6-4ae8-b4f6-6b7c823160cc.gif" height="300" width="650" >
+</p>
+
+### 折扣碼使用方法
+* 在購物車要結帳時，輸入折扣碼即可獲得100元折扣
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/65772569/227449715-12b0200c-7fe7-4158-83aa-6d604455443b.gif" height="300" width="650" >
+</p>
+
