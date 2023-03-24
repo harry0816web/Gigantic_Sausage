@@ -318,7 +318,12 @@
       "password": "qwer",
       "birthday": "2023-03-28",
       "like": [],
-      "shoppingCart": [],
+      "shoppingCart": [
+        {
+          "id": 2,
+          "quantity": 4
+        }
+      ],
       "id": 7
     }
   ],
