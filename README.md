@@ -47,6 +47,12 @@
 
 ![image](https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/collection.gif)
 
+## 商品頁
+* 可以收藏或將商品加入購物車
+* 留下對商品的評論
+
+![image](https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/merch.gif)
+
 ## 購物車
 ### 將商品加入購物車
 * 按下購物車圖示即可將商品加入購物車
@@ -64,3 +70,14 @@
 
 ![image](https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/purchase.gif)
 
+## 購物明細
+* 點擊功能列的發票圖示，即可檢視每一筆交易的明細
+
+![image](https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/orders_detail.gif)
+
+## 會員資料
+* 點擊功能列的人頭圖示，即可進到會員資料頁面
+### 此時還只能看到帳號，且無法更改任何欄位
+* 需先輸入正確的密碼，才能看到帳號及密碼，並且更改
+
+![image](https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/checkUserData.gif)
