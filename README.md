@@ -13,29 +13,35 @@
 ## 註冊會員及登入
 ### 註冊頁面
 * 驗證填入資料是否完整(以下是沒填生日的例子)
-
-![image](https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/dataNotComplete.gif)
+<p align="center">
+<img src="https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/dataNotComplete.gif" height="300" width="650" >
+</p>
 * 不可有重複的帳號名稱
 ### 登入頁面
 * 驗證輸入的密碼與資料庫中該帳號密碼相同後，登入並且建立使用者帳號的cookie
-
-![image](https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/login.gif)
+<p align="center">
+<img src="https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/login.gif" height="300" width="650" >
+</p>
+* 網頁會提示那些資料輸入錯誤
+<p align="center">
+<img src="https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/NoThisAcc.gif" height="300" width="650" >
+</p>
 ## 主頁
 ### 廣告輪播圖
 * 可以讓使用者瀏覽新推出的產品
-
-![imgae](https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/pictureSlideShow.gif)
-
+<p align="center">
+<img src="https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/pictureSlideShow.gif" height="300" width="650" >
+</p>
 ### 檢視商品
 * 在主頁可以檢視所有商品
-
-![image](https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/merchesTable.gif)
-
+<p align="center">
+<img src="https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/merchesTable.gif" height="300" width="650" >
+</p>
 ### 篩選器
 * 透過條件篩選想要的商品(若只擷取頁面會無法顯示下拉選單，所以擷取整個畫面)
-
-![image](https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/filter.gif)
-
+<p align="center">
+<img src="https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/filter.gif" height="300" width="650" >
+</p>
 ### 輸入搜尋
 * 也能夠直接輸入品名搜尋，接著同樣可以使用篩選器排序價格(若只擷取頁面會無法顯示下拉選單，所以擷取整個畫面)
 
@@ -81,3 +87,9 @@
 * 需先輸入正確的密碼，才能看到帳號及密碼，並且更改
 
 ![image](https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/checkUserData.gif)
+
+### 驗證成功後，即可更改帳號及密碼
+* 在更改帳號時，若欲更改的帳號名稱已存在，網頁會警示
+
+![image](https://github.com/harry0816web/Gigantic_Sausage/blob/main/result_pictures/updateUserData.gif)
+
