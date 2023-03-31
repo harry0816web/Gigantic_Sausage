@@ -12,19 +12,19 @@
 * 檢視每次交易的明細
 * 會員有生日優惠
 
-# 一、使用的技術及插件
+# 一、使用的技術及套件
 ### 1.Node.js
   * 使用Node.js將json檔當作資料庫來操作
 
  <img src="https://user-images.githubusercontent.com/65772569/227523874-6e995898-f702-4c25-8fd4-d85e28ad5c56.png" height="100" width="150" >
 
 ### 2.Vue.js 
-  * 使用Vue.js將從資料庫抓取來的資料與畫面模板連結
+  * 使用Vue.js作為前端
 
 <img src="https://user-images.githubusercontent.com/65772569/227523637-52d66fc7-27e9-4e9d-aa99-c1ec83c25d22.png" height="100" width="100" >
 
 ### 3.Axios
-  * 使用axios作為HTTP請求工具
+  * 使用axios作為後端HTTP請求工具從json資料庫抓取資料
 
 <img src="https://user-images.githubusercontent.com/65772569/227525171-224483a9-0940-4d42-ad5b-a1c55bf5b7cd.png" height="100" width="250" >
 
@@ -33,10 +33,10 @@
 
 <img src="https://user-images.githubusercontent.com/65772569/227525534-31fb6aaa-de85-405f-ad48-180e3dd3208c.png" height="100" width="100" >
 
-### 5.Sweetalert2
+### 5.Sweetalert
   * 美化網頁的彈出式提醒
 
-<img src="https://user-images.githubusercontent.com/65772569/227525731-81f61791-93dc-4df7-a4db-951f3ef5bce3.png" height="100" width="250" >
+<img src="https://user-images.githubusercontent.com/65772569/229045183-e411a255-2ddc-45bb-8500-96b521fb0206.png" height="100" width="250" >
 
 # 二、功能介紹
 ## :closed_lock_with_key:註冊會員及登入
