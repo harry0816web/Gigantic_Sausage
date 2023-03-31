@@ -14,17 +14,17 @@
 
 # 一、使用的技術及套件
 ### 1.Node.js
-  * 使用Node.js將json檔當作資料庫來操作
+  * 後端使用Node.js的套件json-server來當作伺服器
 
  <img src="https://user-images.githubusercontent.com/65772569/227523874-6e995898-f702-4c25-8fd4-d85e28ad5c56.png" height="100" width="150" >
 
 ### 2.Vue.js 
-  * 使用Vue.js作為前端
+  * 前端使用Vue.js讓介面與資料狀態同步
 
 <img src="https://user-images.githubusercontent.com/65772569/227523637-52d66fc7-27e9-4e9d-aa99-c1ec83c25d22.png" height="100" width="100" >
 
 ### 3.Axios
-  * 使用axios作為後端HTTP請求工具從json資料庫抓取資料
+  * 使用axios作為HTTP請求工具從json資料庫操作資料
 
 <img src="https://user-images.githubusercontent.com/65772569/227525171-224483a9-0940-4d42-ad5b-a1c55bf5b7cd.png" height="100" width="250" >
 
