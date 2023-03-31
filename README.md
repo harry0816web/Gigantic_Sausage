@@ -1,4 +1,5 @@
 # Gigantic_Sausage(一個賣香腸的商城)
+※此專案的所有圖片及圖示，除logo是自己設計外，其餘皆取自網路
 <p align="center">
 <img src="https://github.com/harry0816web/Gigantic_Sausage/blob/main/pictures/logo.png" height="200" width="200" >
 </p>
@@ -10,7 +11,7 @@
 * 在商品頁留下對商品的評論。
 * 檢視每次交易的明細
 * 會員有生日優惠
-※此專案的所有圖片及圖示，除Logo是自己設計外，其餘皆取自網路
+
 # 一、使用的技術及插件
 ### 1.Node.js
   * 使用Node.js將json檔當作資料庫來操作
