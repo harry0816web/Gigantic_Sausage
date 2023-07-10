@@ -321,10 +321,19 @@
       "shoppingCart": [
         {
           "id": 2,
-          "quantity": 4
+          "quantity": 3
         }
       ],
       "id": 7
+    },
+    {
+      "userName": "couponTest",
+      "password": "1234",
+      "birthday": "2023-03-24",
+      "like": [],
+      "shoppingCart": [],
+      "id": 8,
+      "coupon": "used"
     }
   ],
   "orders": [
@@ -423,6 +432,36 @@
       "total_price": 1502,
       "discount": false,
       "id": 4
+    },
+    {
+      "member_id": "8",
+      "order_detail": [
+        {
+          "id": 2,
+          "quantity": 1
+        },
+        {
+          "id": 1,
+          "quantity": 1
+        }
+      ],
+      "dateTime": "2023-03-24T06:54:25.071Z",
+      "total_price": 230,
+      "discount": true,
+      "id": 5
+    },
+    {
+      "member_id": "7",
+      "order_detail": [
+        {
+          "id": 2,
+          "quantity": 3
+        }
+      ],
+      "dateTime": "2023-03-24T12:36:42.336Z",
+      "total_price": 450,
+      "discount": false,
+      "id": 6
     }
   ]
 }
